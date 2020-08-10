@@ -1,8 +1,8 @@
- # LSTM Stock Predictor
- #### Deep Learning
- ---
+ # Build and Evaluate Deep Learning Models
+ ## Overview
+ In this project we will develop and evaluate two custom `Long Short-Term Memory Recurrent Neural Network` models that predict Bitcoin `nth` day closing price based on a rolling `X` day window. The first model will use the [Crypto Fear and Greed Index (FNG)](https://alternative.me/crypto/fear-and-greed-index/), which analyzes emotions and sentiments from different sources to produce a daily FNG value for cryptocurrencies. The second model will use Bitcoin closing prices. During training we will experiment with different values for the following parameters: `window size(lookback window), number of input layers, epochs, and batch size`. Each model will be evaluated on test data(unseen data). This process can be repeated multiple times until we find a model with the best performace. Then use the model to make predictions and compare them to actual values.
 
-In this assignment, I use deep learning recurrent neural networks to model bitcoin closing prices. One model will use the FNG indicators to predict the closing price while the second model will use a window of closing prices to predict the nth closing price.
+ Note: In order to make accurate comparisons between the two models, we need to maintain the same architecture and parameters during training and testing of each model. 
 
 ### Evaluating the performance of each model
  After experimenting with different window sizes, and trying different values to train both models, I made the following conclusions:
