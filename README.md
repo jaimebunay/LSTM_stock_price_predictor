@@ -52,12 +52,15 @@ model.compile(loss='mean_squared_error', optimizer='adam', metrics=['mse'])
 model.fit(X_train,y_train, epochs =50, batch_size=10, verbose = 0, shuffle=False)
  ```
 
-### Evaluating the performance of each model
- After experimenting with different window sizes, and trying different parameter values to train both models, I made the following conclusions:
-* A window size of one led to better results for both models
-* Training the models with higher values for both epochs and batch sizes resulted in a larger loss during testing. 
-* Using the `Fear and Greed Index' as a feauture to train the model resulted in a bigger loss percentage compared to the second model. The lowest loss I achieved was 9.46% for the first model. Using the same parameter values to train the next model resulted in a loss percentage of 0.17%
-* The second model, using closing prices, performs better in tracking actual stock prices over time. 
+## Evaluating the performance of each model
+In this section we will use `X_test` data to evaluate the performance and make predictions for each model. Then we will create a Dataframe to compare real prices vs predicted prices. One important step here is to use the `scaler.inverse transform` function to recover the actual closing prices from the scaled values. 
+
+Once the building, training, and testing proceedures have been successfully completed, we can see that the closing price model resulted in more accurate predictions. This is supported by the `mean square error loss` metric. The FNG model has a loss of .1283, and the closing price model has a lower loss of .0025. We can better visualize the performance by using a line chart to compare the real with the actual closing prices. 
+
+![fng_model](images/fng_graph.png)
+
+![closing_price](images/closing_price_graph.png)
+
 
 
 
